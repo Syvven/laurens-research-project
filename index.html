@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Lauren Oliver: Research Project</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+        <script type="module" src="MersenneTwister.js"></script>
         <script type="module" src="main.js"></script>
-
+        <canvas id="canvas"></canvas>
         <div id="intro-ui">
             <p>
                 <h1 id="intro-header">Lauren Oliver: Research Project</h1>
             </p>
     
             <div class="card" id="intro">
-                <h2 id="intro-h2"> Study Instructions </h2>
-                information about how to do the study
-                <img src="data/example.png" id="intro-image">h</img>
+                <h2 id="intro-h2"> Study Instructions - Please Read Fully</h2>
+                <img src="data/example.png" id="intro-image"></img>
+                <p id="intro-text">
+                    &nbsp; &nbsp; <b>Before diving into instructions, this study is meant to be done on a 
+                    desktop or laptop computer. It may not work as intended on a mobile device. </b><br>
+                    &nbsp; &nbsp; This study will ask you to select a square on a grid as fast as possible. 
+                    After clicking the "Begin" button below, a grid of colored squares will be
+                    shown after a countdown. The objective is to click on that off-colored 
+                    square as quick as possible. If there is no off-colored square, or you don't
+                    think there is any off colored square, a "no outlier" button is available to 
+                    also click as quick as possible. The study will consist of two sections.
+                    The first section will consist of 60 total grids which may vary the color 
+                    of a single square. The first 48 of these will have gaps between 
+                    the squares like the sample image, and the last 12 will not have gaps between 
+                    the squares. The second part of the study will consist of 36 total grids and 
+                    may vary more than one square with more than one color. The goal for the second
+                    part is to pick out the one that stands out the most to you, or say there is 
+                    no outlier. The first 24 will have gaps between the squares, and the next 12
+                    will not have gaps. <br>
+                    &nbsp; &nbsp; Through the study, your responses will be timed and recorded.
+                    At the end of the study, these times will be recorded, you will be asked to
+                    enter your name, and a link to a google form will be shown to conduct a short
+                    questionaire. If you wish to see any of the data or information that was being 
+                    recorded, please contact Lauren Oliver at olive381@umn.edu
+                </p>
             </div>
 
             <div class="card" id="intro-start">
                 <h2> Begin </h2>
             </div> 
         </div>  
+
+        <div id="end">
+            <h1 id="thank-you">Thank you for participating!</h1>
+            <h2 id="below-thank-you">Please Enter Your Name Below</h2>
+            
+            <input type="text" id="name-input">
+            <button id="submit-name">Submit</button>
+        </div>
+        <a href="https://docs.google.com/forms/d/1xQXAzXV_Xp0j8D6KqEy1QsKsDjiL_wIXqcSNMMg3DC4/edit?usp=drivesdk" id="linky">
+            Please Follow This Link To Answer The Questionaire <br>
+            (You Must Be Logged Into Your UMN Email)
+        </a>
 	</body>
 </html>
