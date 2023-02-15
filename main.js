@@ -670,6 +670,32 @@ var yellow_text_indices = [
     11, 4, 9, 8, 5, 3, 10, 7, 6, 0, 1, 2
 ];
 
+var round_map = [
+    32, 24, 21, 26, 6, 34, 12, 2, 40, 39, 13, 45, 47, 46, 44, 33, 22, 20,
+    1, 23, 9, 37, 35, 38, 5, 17, 4, 28, 8, 11, 29, 31, 36, 19, 43, 7, 16, 
+    14, 18, 30, 10, 15, 41, 3, 0, 27, 25, 42,
+
+    2+48, 5+48, 3+48, 11+48, 4+48, 1+48, 8+48, 6+48, 0+48, 7+48, 9+48, 10+48,
+
+    6+60, 20+60, 23+60, 3+60, 18+60, 7+60, 14+60, 8+60, 17+60, 21+60, 10+60, 0+60, 
+    5+60, 13+60, 4+60, 15+60, 11+60, 1+60, 16+60, 22+60, 12+60, 19+60, 9+60, 2+60,
+
+    11+84, 4+84, 9+84, 8+84, 5+84, 3+84, 10+84, 7+84, 6+84, 0+84, 1+84, 2+84
+]
+
+var actual_map = []
+for (let i = 0; i < round_map.length; i++)
+{
+    for (let j = 0; j < round_map.length; j++)
+    {
+        if (round_map[j] == i)
+        {
+            actual_map.push(j)
+            break;
+        }
+    }
+}
+
 var rounds = [];
 var results = [];
 
@@ -735,8 +761,8 @@ function on_finish(name)
     var str = name;
     for (let i = 0; i < num_rounds; i++)
     {
-        var e = results[i];
-        var r = rounds[i];
+        var e = results[actual_map[i]];
+        var r = rounds[actual_map[i]];
 
         str += "," + r.target_index + "," + e.time + "," + e.hit_target;
     }
@@ -744,8 +770,6 @@ function on_finish(name)
     console.log(str);
 
     var searchParams = construct_params(str);
-
-    console.log(searchParams);
 
     fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSewEByiBTVUWJoH6Xf9LGY4Zuwy4sLdtPrA5EmidiSjz0S1oQ/formResponse", {
         method: "POST",
