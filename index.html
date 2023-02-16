@@ -10,7 +10,6 @@
 	<body>
         <script type="module" src="MersenneTwister.js"></script>
         <script type="module" src="main.js"></script>
-        <canvas id="canvas"></canvas>
         <div id="intro-ui">
             <p>
                 <h1 id="intro-header">Lauren Oliver: Research Project</h1>
@@ -22,7 +21,7 @@
                 <p id="intro-text">
                     You will be shown a grid of colored squares. <br>
                     Please click on the square that stands out from the rest.  <br>
-                    If no squares stand out, please click the “no outlier” button underneath the grid. <br><br>
+                    If no squares stand out, please click the “no outlier” button underneath the grid<a id="secret">.</a> <br><br>
                     There will be 96 rounds, aim to choose a square (or none) as fast as you can. <br>
                     The test should take a few minutes, and you will be asked to give your name and fill out a short survey after the test. <br>
                 </p>
@@ -32,6 +31,11 @@
                 <h2> Begin </h2>
             </div> 
         </div>  
+
+        <div id="debug">
+            <input type="number" id="jump">
+            <button id="submit-jump">Go</button>
+        </div>
 
         <div id="end">
             <h1 id="thank-you">Thank you for participating!</h1>
@@ -44,5 +48,6 @@
             Please Follow This Link To Answer The Questionaire <br>
             (You Must Be Logged Into Your UMN Email)
         </a>
+        <canvas id="canvas"></canvas>
 	</body>
 </html>

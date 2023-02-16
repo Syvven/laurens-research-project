@@ -6,6 +6,15 @@
     padding-top: 0%;
 }
 
+
+
+#debug
+{
+    display: none;
+    position: absolute;
+    z-index: 99999999999;
+}
+
 #linky
 {
     display: none;

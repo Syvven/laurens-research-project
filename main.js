@@ -1010,6 +1010,11 @@ function randInt(max)
     return Math.floor(Math.random() * max);
 }
 
+var debug = false;
+document.getElementById("secret").addEventListener("click", (e) => {
+    debug = true;
+});
+
 document.getElementById("intro-start").addEventListener("click", (e) =>
 {
     for (let i = 0; i < blue_text_indices.length; i++)
@@ -1053,13 +1058,19 @@ document.getElementById("intro-start").addEventListener("click", (e) =>
     set_values();
 
     animate(0);
-
+    
     var x = setInterval((e) =>
     {
         if (countdown_timer == 0)
         {
             draw = true;
             started = true;
+            if (debug)
+            {
+                document.getElementById('debug').style.display = "inline-block";
+                document.getElementById('jump').style.zIndex = 999999;
+                document.getElementById('submit-jump').style.zIndex = 999999;
+            }
             clearInterval(x);
         }
         else 
@@ -1079,6 +1090,16 @@ function onWindowResize(){
         set_values();
     }
 }
+
+document.getElementById("submit-jump").addEventListener('click', (e) =>
+{
+    var text = document.getElementById("jump").value;
+    {
+        start = true;
+        dont_click_again = true;
+        current_round = parseInt(text);
+    }
+});
 
 document.getElementById("submit-name").addEventListener('click', (e) =>
 {
